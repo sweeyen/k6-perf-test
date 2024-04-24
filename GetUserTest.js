@@ -15,7 +15,7 @@ export const options = {
     iterations: 20,
 
     thresholds: {
-        http_req_failed: [{ threshold: "rate<0.1", abortOnFail: false }], // http errors should be less than 10%
+        checks: [{ threshold: "rate>0.95", abortOnFail: false }], // http errors should be less than 10%
         http_req_duration: ['p(99)<2000'], // 99% of requests should be below 2s
     },
 };
