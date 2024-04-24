@@ -6,7 +6,6 @@ import { describe, expect } from 'https://jslib.k6.io/k6chaijs/4.3.4.2/index.js'
 import * as authenticate from './setup/Authentication.js';
 import * as report from './setup/Reporting.js';
 
-
 const url = 'https://reqres.in';
 let userId = null;
 
@@ -29,17 +28,15 @@ export function setup() {
         name: name,
         job: job
     };
-
+    
     describe('Create user', () => {
         let response = http.post(url.concat('/api/users'), requestBody, null);
         console.log("response status : " + response.status);
         expect(response.status, 'Response Status ' + response.status).to.equal(201);
         expect(response.json('name'), 'Name ').to.equal(name);
 
-
         userId = response.json('id');
     })
-
     return { userId };
 }
 
@@ -47,13 +44,10 @@ export function setup() {
 export default function main({ userId }) {
 
     describe('Get user based on Id', () => {
-
         let userResponse = http.get(url.concat(`/api/users/${userId}`), null);
         expect(userResponse.status, "Get user response status ").to.equal(404);
         //website do not store new user, therefore expecting to return 404.
         //change the expected result to adapt to your test
-
-
     })
 }
 
