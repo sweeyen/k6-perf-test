@@ -1,21 +1,15 @@
-name: Windows Workflow
+name: Docker Workflow
 on: [push]
 
 jobs:
-  k6_performance_test:
-    name: k6 performance test run on windows
-    runs-on: windows-latest
+  k6_local_test:
+    name: k6 local test run - docker example
+    runs-on: ubuntu-latest
+    container: grafana/k6:latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: download and extract k6 release binaries
-        run: |
-          curl -L https://github.com/grafana/k6/releases/download/v0.50.0/k6-v0.50.0-win64.zip -o k6.zip
-          7z.exe e k6.zip
-        shell: bash
-
-      - name: k6 test
-        run: ./k6.exe run GetUserTest.js
-        shell: bash
+      - name: Local k6 test
+        run: k6 run docker/script.js
