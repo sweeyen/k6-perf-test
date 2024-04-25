@@ -1,11 +1,13 @@
 name: Docker Workflow
 on: [push]
-
+      
 jobs:
   k6_local_test:
     name: k6 run in docker
     runs-on: ubuntu-latest
     container: grafana/k6:latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
