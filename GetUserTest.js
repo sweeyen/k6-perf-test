@@ -59,7 +59,7 @@ export function handleSummary(objData) {
     let strCurrentFileBaseName = 'GetUserTest';
     let strCurrentDateTime = report.yyyyMMddHHmmss();
     let strSummaryHtmlFileName =  './result/' + strCurrentFileBaseName + '.summary_' + strCurrentDateTime + '.html';
-    let strSummaryJunitFileName = './result/ + strCurrentFileBaseName + '.summary_' + strCurrentDateTime + '_junit.xml';
+    let strSummaryJunitFileName = './result/‘ + strCurrentFileBaseName + '.summary_' + strCurrentDateTime + '_junit.xml';
     return {
         [strSummaryHtmlFileName]: htmlReport(objData),
         [strSummaryJunitFileName]: jUnit(objData),
