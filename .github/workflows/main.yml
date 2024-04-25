@@ -13,5 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
         
+      - name: create Result
+        run: mkdir Result      
+        
       - name: Local k6 test
         run: k6 run GetUserTest.js
