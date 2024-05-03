@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v1
         
       - name: create Result
-        run: apt update && apt install sudo && mkdir Result      
+        run: apk update && apk install sudo && mkdir Result      
         
       - name: Local k6 test
         run: k6 run GetUserTest.js
