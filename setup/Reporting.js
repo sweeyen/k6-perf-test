@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { describe, expect } from 'https://jslib.k6.io/k6chaijs/4.3.4.2/index.js';
+import { describe, expect } from 'https://jslib.k6.io/k6chaijs/4.5.0.1/index.js';
 
 export function yyyyMMddHHmmss() {
   let currentDate = new Date();

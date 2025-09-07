@@ -21,3 +21,7 @@ k6 run <testscriptname>.js
 ## Check Test Result
 
 Result is stored at ``Result`` folder in html / junit format. 
+
+## Sample Result
+![Sample Result](./SampleResult.jpg)
+![Sample Summary Report](./Sample_GetUserTest.summary_20250907214414.html)
