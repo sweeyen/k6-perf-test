@@ -61,8 +61,8 @@ export function teardown({ userId }) {
 export function handleSummary(objData) {
     let strCurrentFileBaseName = 'GetUserTest';
     let strCurrentDateTime = report.yyyyMMddHHmmss();
-    let strSummaryHtmlFileName = './result/' + strCurrentFileBaseName + '.summary_' + strCurrentDateTime + '.html';
-    let strSummaryJunitFileName = './result/' + strCurrentFileBaseName + '.summary_' + strCurrentDateTime + '_junit.xml';
+    let strSummaryHtmlFileName = './Result/' + strCurrentFileBaseName + '.summary_' + strCurrentDateTime + '.html';
+    let strSummaryJunitFileName = './Result/' + strCurrentFileBaseName + '.summary_' + strCurrentDateTime + '_junit.xml';
     return {
         [strSummaryHtmlFileName]: htmlReport(objData),
         [strSummaryJunitFileName]: jUnit(objData),
