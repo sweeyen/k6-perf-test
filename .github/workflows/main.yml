@@ -3,7 +3,7 @@ on: [push]
       
 jobs:
   k6_local_test:
-    name: k6 run in docker
+    name: k6 performance test docker
     runs-on: ubuntu-latest
     container: grafana/k6:latest
     permissions:
@@ -13,10 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Install k6
-        run: |
-          apk add --no-cache k6
-        
       - name: create Result
         run: apk update && apk install sudo && mkdir Result      
         
