@@ -15,9 +15,7 @@ jobs:
 
       - name: Install k6
         run: |
-          apk update
-          apk add --no-cache sudo
-          sudo apk add --no-cache k6
+          apk add --no-cache k6
         
       - name: create Result
         run: apk update && apk install sudo && mkdir Result      
