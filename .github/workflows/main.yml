@@ -1,4 +1,4 @@
-name: Docker Workflow
+name: Test K6 In Docker Workflow
 on: [push]
       
 jobs:
