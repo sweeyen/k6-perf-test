@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+
+      - name: Install k6
+        run: |
+          apk update
+          apk add sudo
+          apk add --no-cache k6   
         
       - name: create Result
         run: apk update && apk install sudo && mkdir Result      
