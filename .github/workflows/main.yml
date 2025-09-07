@@ -1,20 +1,22 @@
-name: Docker Workflow
+name: Test K6 In Docker Workflow
 on: [push]
       
 jobs:
   k6_local_test:
-    name: k6 run in docker
+    name: k6 performance test docker
     runs-on: ubuntu-latest
-    container: grafana/k6:latest
+    container:
+      image: grafana/k6:latest
+      options: --user 0
     permissions:
       contents: write
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-        
+        uses: actions/checkout@v4
+
       - name: create Result
-        run: apk update && apk install sudo && mkdir Result      
+        run: apk update && apk add --no-cache sudo && mkdir -p Result      
         
       - name: Local k6 test
         run: k6 run GetUserTest.js
